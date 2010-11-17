@@ -1,0 +1,31 @@
+#post_list table {
+        border-collapse: separate;
+}
+
+#post_list table tr td {
+        padding: 5px;
+        vertical-align: top;
+}
+
+#post_list .list_actions {
+    font-size:    small;
+    text-align:   right;
+    padding-left: 1em;
+}
+
+#post_list .list_other {
+    font-size:    x-small;
+    text-align:   right;
+    background:   #D3D3D3
+}
+#post_list .list_links {
+    background:   #E8E8E8;
+}
+
+#post_list .list_cat {
+    background:   #EEE9E9;
+}
+
+#post_list .list_content {
+    background:   white;
+}
