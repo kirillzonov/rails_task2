@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :category %><br />
-    <%= f.text_field :category %>
+    <%= f.label :category_id %><br />
+    <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name, @post.category_id) %>
   </div>
   <div class="field">
     <%= f.label :theme %><br />
