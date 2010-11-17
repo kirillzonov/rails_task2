@@ -1,14 +1,6 @@
 class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
-  def index
-    @posts = Post.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @posts }
-    end
-  end
 
   # GET /posts/1
   # GET /posts/1.xml
@@ -76,7 +68,7 @@ class PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to(posts_url) }
+      format.html { redirect_to(:root) }
       format.xml  { head :ok }
     end
   end
