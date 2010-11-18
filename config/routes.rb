@@ -1,6 +1,6 @@
 RailsTask2::Application.routes.draw do
-  resources :users
-  resources :posts
+  resources :users, :only => [ :new, :create, :show, :edit]
+  resources :posts, :only => [ :new, :create, :show]
   root :to => 'home#index'
   controller :sessions do
     get 'login' => :new

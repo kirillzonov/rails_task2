@@ -14,9 +14,9 @@
     <br>  Tags: <%= post.tags %></td>
   </tr>
   <tr class='list_links' >
-    <td class='list_actions'><%= link_to 'Show_more', post %> ||
-    <%= link_to 'Edit', edit_post_path(post) %> ||
-    <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class='list_actions'><%= link_to 'Show more', post %> ||
+    <%= link_to 'Add comment', post %>
+    </td>
   </tr>
 <% end %>
 </table>

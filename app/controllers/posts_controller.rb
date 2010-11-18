@@ -5,6 +5,10 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.xml
   def show
+    @user_id = session[:user_id]
+    if @user_id
+      @user_email = User.find(@user_id).email
+    end
     @post = Post.find(params[:id])
 
     respond_to do |format|

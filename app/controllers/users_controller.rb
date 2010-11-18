@@ -1,13 +1,4 @@
 class UsersController < ApplicationController
-  def index
-    @users = User.order(:email)
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @users }
-    end
-  end
-
   def show
     @user = User.find(params[:id])
 
@@ -35,7 +26,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to(user_url, :notice => 'User #{@user.name} was successfully created.') }
+        format.html { redirect_to(:login, :notice => "User #{@user.email} was successfully created.") }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }
@@ -55,16 +46,6 @@ class UsersController < ApplicationController
         format.html { render :action => "edit" }
         format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
       end
-    end
-  end
-
-  def destroy
-    @user = User.find(params[:id])
-    @user.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(users_url) }
-      format.xml  { head :ok }
     end
   end
 end

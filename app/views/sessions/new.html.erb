@@ -1,7 +1,6 @@
 <%= form_tag do %>
   <fieldset>
-    <legend>Please Log In</legend>
-
+    <legend>Here you can Log In</legend>
 <div>
   <label for="email" >Email:</label>
   <%= text_field_tag :email, params[:email] %>
@@ -15,3 +14,4 @@
 </div>
 </fieldset>
 <% end %>
+<%= link_to 'Back', :root %>
