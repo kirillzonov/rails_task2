@@ -7,7 +7,18 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-
+  <table>
+    <tr>
+      <td>
+        <% if @user_id %>
+        <%= render 'layouts/logged' %>
+      <% else %>
+        <%= render 'layouts/anonim' %>
+      <% end %>
+      </td>
+    </tr>
+  </table>
+  <hr width=60% align=left>
 <%= yield %>
 
 </body>
