@@ -9,7 +9,8 @@ Category.delete_all
                   :theme => "some_theme #{rand(100)}",
                   :source => 'some_source',
                   :tags => "tag" * rand(10),
-                  :content => "Some news in category  #{category.name} and about #{post_index}" * 8
+                  :content => "Some news in category  #{category.name} and about #{post_index}" * 8,
+                  :rate => rand(20) - 10
                 )
                   end
 end
