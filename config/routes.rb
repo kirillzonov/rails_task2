@@ -1,16 +1,20 @@
 RailsTask2::Application.routes.draw do
+  get "posts/voteup"
+
+  get "posts/votedown"
+
   resources :users, :only => [ :new, :create, :show, :edit]
-  resources :posts, :only => [ :new, :create, :show, :voteup]
+  resources :posts, :only => [ :new, :create, :show]
   root :to => 'home#index'
   controller :sessions do
     get 'login' => :new
     post 'login' => :create
     delete 'logout' => :destroy
   end
-  controller :posts do
-    get 'voteup' => :voteup
-    get 'votedown' => :votedown
-  end
+#  controller :posts do
+#    get 'voteup' => :voteup
+#    get 'votedown' => :votedown
+#  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

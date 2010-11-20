@@ -1,1 +1,5 @@
-<%= link_to '-', votedown_path(:post_id => @current_post)%> <%= @current_post.rate %> <%= link_to '+', voteup_path(:post_id => @current_post) %>
+<%= link_to '-', posts_votedown_path(:post_id => @current_post), :remote => true %> 
+
+<div id='rate_div'><%= @current_post.rate %> </div>
+
+<%= link_to "+", posts_voteup_path(:post_id => @current_post), :remote => true%>

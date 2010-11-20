@@ -81,11 +81,11 @@ class PostsController < ApplicationController
     @post = Post.find(params[:post_id])
     @post.rate = @post.rate + 1
     @post.save
-    respond_to do |format|
+   respond_to do |format|
       format.html { redirect_to :root} 
       format.js
       format.xml  { render :xml => @post }
-    end
+   end
   end
 
   def votedown
