@@ -79,7 +79,7 @@ class PostsController < ApplicationController
 
   def voteup
     @post = Post.find(params[:post_id])
-    @post.rate = @post.rate + 1
+    @post.rate += 1
     @post.save
    respond_to do |format|
       format.html { redirect_to :root} 
@@ -90,7 +90,7 @@ class PostsController < ApplicationController
 
   def votedown
     @post = Post.find(params[:post_id])
-    @post.rate = @post.rate - 1
+    @post.rate -= 1
     @post.save
     respond_to do |format|
       format.html { redirect_to :root} 

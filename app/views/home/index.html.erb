@@ -1,6 +1,7 @@
 <h1>Listing posts</h1>
 <div id='post_list'>
 <%= link_to 'New Post', new_post_path %>
+<%= will_paginate @posts %>
 <table width=60% cols="2">
 <col width=10%>
 <col width=50%>
@@ -29,7 +30,7 @@
   </tr>
 <% end %>
 </table>
-
+<%= will_paginate @posts %>
 <br />
 
 </div>
