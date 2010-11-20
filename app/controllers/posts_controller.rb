@@ -78,16 +78,25 @@ class PostsController < ApplicationController
   end
 
   def voteup
-    @post = Post.find(params[:id])
-    @post.rate = 1000
-
+    @post = Post.find(params[:post_id])
+    @post.rate = @post.rate + 1
+    @post.save
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { redirect_to :root} 
+      format.js
       format.xml  { render :xml => @post }
     end
   end
 
   def votedown
+    @post = Post.find(params[:post_id])
+    @post.rate = @post.rate - 1
+    @post.save
+    respond_to do |format|
+      format.html { redirect_to :root} 
+      format.js
+      format.xml  { render :xml => @post }
+    end
 
   end
 end

@@ -1,1 +1,1 @@
-<%= link_to '-', votedown_path %> <%= @current_post.rate %> <%= link_to '+', voteup_path %>
+<%= link_to '-', votedown_path(:post_id => @current_post)%> <%= @current_post.rate %> <%= link_to '+', voteup_path(:post_id => @current_post) %>
