@@ -1,20 +1,28 @@
 <h1>Listing posts</h1>
 <div id='post_list'>
 <%= link_to 'New Post', new_post_path %>
-<table width=60%>
+<table width=60% cols="2">
+<col width=10%>
+<col width=50%>
 <% @posts.each do |post| %>
   <tr class='list_cat'>
-    <td>Category: <%= post.category.name %> || 
-    Theme: <%= post.theme %></td>
+    <td>
+      <% @current_post = post %>
+      <%= render "posts/rate" %></td>
+    <td>  Category: <%= post.category.name %> || 
+      Theme: <%= post.theme %></td>
   </tr>
   <tr class='list_content' >
+    <td></td>
     <td><%= post.content %><l/td>
   </tr>
   <tr class='list_other'>
+    <td></td>
     <td>Source: <%= post.source %>
     <br>  Tags: <%= post.tags %></td>
   </tr>
   <tr class='list_links' >
+    <td></td>
     <td class='list_actions'><%= link_to 'Show more', post %> ||
     <%= link_to 'Add comment', post %>
     </td>

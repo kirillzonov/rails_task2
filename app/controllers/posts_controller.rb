@@ -76,4 +76,18 @@ class PostsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def voteup
+    @post = Post.find(params[:id])
+    @post.rate = 1000
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @post }
+    end
+  end
+
+  def votedown
+
+  end
 end
