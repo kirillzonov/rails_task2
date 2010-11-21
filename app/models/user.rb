@@ -1,11 +1,14 @@
 require 'digest/sha2'
 
 class User < ActiveRecord::Base
-  validates :email, :presence => true, :uniqueness => true
-  validates :password, :confirmation => true
+#  validates :email, :presence => true, :uniqueness => true
+#  validates :password, :confirmation => true
+#  validate  :password_must_be_present
+  validates_presence_of :email, :password
+  validates_uniqueness_of :email
+  validates_confirmation_of :password
   attr_accessor :password_confirmation
   attr_accessor :password
-  validate  :password_must_be_present
   
   class << self
     def authenticate(email, password)
