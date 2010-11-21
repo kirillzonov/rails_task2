@@ -10,11 +10,7 @@
   <table>
     <tr>
       <td>
-        <% if @user_id %>
-        <%= render 'layouts/logged' %>
-      <% else %>
-        <%= render 'layouts/anonim' %>
-      <% end %>
+        <%= logged %>
       </td>
     </tr>
   </table>

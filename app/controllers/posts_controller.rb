@@ -92,6 +92,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:post_id])
     @post.rate -= 1
     @post.save
+    session[:user_id]
     respond_to do |format|
       format.html { redirect_to :root} 
       format.js
