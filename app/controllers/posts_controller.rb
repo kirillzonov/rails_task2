@@ -76,28 +76,4 @@ class PostsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-
-  def voteup
-    @post = Post.find(params[:post_id])
-    @post.rate += 1
-    @post.save
-   respond_to do |format|
-      format.html { redirect_to :root} 
-      format.js
-      format.xml  { render :xml => @post }
-   end
-  end
-
-  def votedown
-    @post = Post.find(params[:post_id])
-    @post.rate -= 1
-    @post.save
-    session[:user_id]
-    respond_to do |format|
-      format.html { redirect_to :root} 
-      format.js
-      format.xml  { render :xml => @post }
-    end
-
-  end
 end

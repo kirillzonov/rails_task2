@@ -12,7 +12,9 @@
     <td>
       <% @current_post = post %>
       <%= render "posts/rate" %></td>
-    <td>  Category: <%= post.category.name %> || 
+    <td>   
+      <div id=<%= "message_for+#{post.id}"%>></div>
+      Category: <%= post.category.name %> || 
       Theme: <%= post.theme %></td>
   </tr>
   <tr class='list_content' >

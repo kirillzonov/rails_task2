@@ -1,7 +1,8 @@
 RailsTask2::Application.routes.draw do
-  get "posts/voteup"
 
-  get "posts/votedown"
+#  get "posts/voteup"
+
+#  get "posts/votedown"
 
   resources :users, :only => [ :new, :create, :show, :edit]
   resources :posts, :only => [ :new, :create, :show]
@@ -10,6 +11,10 @@ RailsTask2::Application.routes.draw do
     get 'login' => :new
     post 'login' => :create
     delete 'logout' => :destroy
+  end
+
+  controller :votes do
+  get "votes/create"
   end
 #  controller :posts do
 #    get 'voteup' => :voteup

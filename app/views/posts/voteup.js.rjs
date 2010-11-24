@@ -1,1 +1,0 @@
-page.replace_html :"rate_for+#{@post.id}", @post.rate 
