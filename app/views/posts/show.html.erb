@@ -9,12 +9,14 @@
     <td><%= @post.content %></td>
   </tr>
   <tr class='list_other'>
-    <% if !post.source.empty? %>
-      Source: <%= post.source %>
+    <td>
+    <% if !@post.source.empty? %>
+      Source: <%= @post.source %>
     <% end %>
-    <% if !post.tags.empty? %>
-      <br>  Tags: <%= post.tags %>
-    <% end %>
+    <% if !@post.tags.empty? %>
+      <br>  Tags: <%= @post.tags %>
+  <% end %>
+  </td>
   </tr>
   <tr class='list_links' >
     <td class='list_actions'>

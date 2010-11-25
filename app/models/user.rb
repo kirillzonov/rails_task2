@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   validates_presence_of :email, :password
   validates_uniqueness_of :email
   validates_confirmation_of :password
+  validates :email,  :format => { :with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, :message => 'Are you sure that this email?' }
   attr_accessor :password_confirmation
   attr_accessor :password
   
