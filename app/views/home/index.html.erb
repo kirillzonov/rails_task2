@@ -24,10 +24,10 @@
   <tr class='list_other'>
     <td></td>
     <td>
-    <% if !post.source.nil? %>
+    <% if !post.source.empty? %>
       Source: <%= post.source %>
     <% end %>
-    <% if !post.tags.nil? %>
+    <% if !post.tags.empty? %>
       <br>  Tags: <%= post.tags %>
     <% end %>
     </td>
