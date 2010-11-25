@@ -1,7 +1,16 @@
 class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
-
+  def index
+    @posts = Post.paginate(:page => params[:page], :per_page => 5)
+    @user_id = session[:user_id]
+    if @user_id
+      @user_email = User.find(@user_id).email
+    end
+    respond_to do |format|
+      format.html
+    end
+  end
   # GET /posts/1
   # GET /posts/1.xml
   def show
@@ -12,8 +21,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @post }
+      format.html
     end
   end
 
@@ -23,7 +31,7 @@ class PostsController < ApplicationController
     @post = Post.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html 
       format.xml  { render :xml => @post }
     end
   end

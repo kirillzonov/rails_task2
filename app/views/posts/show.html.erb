@@ -1,7 +1,8 @@
 <div id='post_list'>
 <table width=60%>
   <tr class='list_cat'>
-    <td>Category: <%= @post.category.name %> || 
+    <td>   
+    Category: <%= @post.category.name %> || 
     Theme: <%= @post.theme %></td>
   </tr>
   <tr class='list_content' >
@@ -38,7 +39,7 @@
     </div>
     <div class="field">
     <%= f.label :content, 'Comment' %><br />
-    <%= f.text_area :content %>
+    <%= f.text_area :content, :rows => 6 %>
     </div>
     <div class="actions">
     <%= f.submit 'Add' %>

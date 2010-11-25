@@ -1,7 +1,7 @@
 <h1>Listing posts</h1>
 <div id='post_list'>
-  <% if @user_id %> 
-<%= link_to 'New Post', new_post_path %>
+<% if @user_id %> 
+  <%= link_to 'New Post', new_post_path %>
 <% end %>
 <%= will_paginate @posts %>
 <table width=60% cols="2">
@@ -19,12 +19,18 @@
   </tr>
   <tr class='list_content' >
     <td></td>
-    <td><%= post.content %><l/td>
+    <td><%= post.content %></td>
   </tr>
   <tr class='list_other'>
     <td></td>
-    <td>Source: <%= post.source %>
-    <br>  Tags: <%= post.tags %></td>
+    <td>
+    <% if !post.source.nil? %>
+      Source: <%= post.source %>
+    <% end %>
+    <% if !post.tags.nil? %>
+      <br>  Tags: <%= post.tags %>
+    <% end %>
+    </td>
   </tr>
   <tr class='list_links' >
     <td></td>
@@ -35,5 +41,5 @@
 </table>
 <%= will_paginate @posts %>
 <br />
-
+<%= link_to 'See all posts', posts_path %>
 </div>

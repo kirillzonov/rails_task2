@@ -1,31 +1,44 @@
-<h1>Listing posts</h1>
-
-<table>
-  <tr>
-    <th>Category</th>
-    <th>Theme</th>
-    <th>Content</th>
-    <th>Source</th>
-    <th>Tags</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<div id='post_list'>
+<% if @user_id %> 
+  <%= link_to 'New Post', new_post_path %>
+<% end %>
+<%= will_paginate @posts %>
+<table width=60% cols="2">
+<col width=10%>
+<col width=50%>
 <% @posts.each do |post| %>
-  <tr>
-    <td><%= post.category.name %></td>
-    <td><%= post.theme %></td>
+  <tr class='list_cat'>
+    <td>
+      <% @current_post = post %>
+      <%= render "posts/rate" %></td>
+    <td>   
+      <div id=<%= "message_for+#{post.id}"%>></div>
+      Category: <%= post.category.name %> || 
+      Theme: <%= post.theme %></td>
+  </tr>
+  <tr class='list_content' >
+    <td></td>
     <td><%= post.content %></td>
-    <td><%= post.source %></td>
-    <td><%= post.tags %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+  <tr class='list_other'>
+    <td></td>
+    <td>
+    <% if !post.source.nil? %>
+      Source: <%= post.source %>
+    <% end %>
+    <% if !post.tags.nil? %>
+      <br>  Tags: <%= post.tags %>
+    <% end %>
+    </td>
+  </tr>
+  <tr class='list_links' >
+    <td></td>
+    <td class='list_actions'><%= link_to 'Show more', post %>
+    </td>
   </tr>
 <% end %>
 </table>
-
+<%= will_paginate @posts %>
 <br />
-
-<%= link_to 'New Post', new_post_path %>
+</div>
+<%= link_to 'Back', :root  %>
