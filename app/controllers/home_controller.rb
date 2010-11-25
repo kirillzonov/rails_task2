@@ -7,7 +7,7 @@ class HomeController < ApplicationController
       @user_email = User.find(@user_id).email
     end
     respond_to do |format|
-      format.html # index.html.erb
+      format.html 
       format.xml  { render :xml => @posts }
     end
   end

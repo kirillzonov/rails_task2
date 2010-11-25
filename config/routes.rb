@@ -4,7 +4,7 @@ RailsTask2::Application.routes.draw do
 
   resources :comments, :only => [ :new ]
 
-  resources :users, :only => [ :new, :create, :show, :edit]
+  resources :users#, :only => [ :new, :create, :show, :edit]
   resources :posts, :only => [ :new, :create, :show]
   root :to => 'home#index'
   controller :sessions do

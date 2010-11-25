@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    @user_id = session[:user_id]
+
+    if @user_id
+      @user_email = User.find(@user_id).email
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -19,6 +24,11 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @user_id = session[:user_id]
+
+    if @user_id
+      @user_email = User.find(@user_id).email
+    end
   end
 
   def create
