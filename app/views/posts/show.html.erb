@@ -5,7 +5,7 @@
     Theme: <%= @post.theme %></td>
   </tr>
   <tr class='list_content' >
-    <td><%= @post.content %><l/td>
+    <td><%= @post.content %></td>
   </tr>
   <tr class='list_other'>
     <td>Source: <%= @post.source %>
@@ -17,4 +17,33 @@
     </td>
   </tr>
 </div>
+<tr><td>
+<% if !@post.comments.empty? %>
+  <h2>Comments:</h2>
+  <ul>
+  <% @post.comments.each do |comment| %>
+    <li>
+    <p><b><%= comment.user.empty? ? 'Anonimous' : comment.user %></b></p>
+    <p><%= comment.content %></p>
+    </li>
+  <% end %>
+  </ul>
+<% end %>
+<hr>
+<%= form_for( [@post, @comment = @post.comments.new]) do |f| %>
+    <p>Input your name and comment here</p>
+    <div class="field">
+    <%= f.label :user, 'Name' %><br />
+    <%= f.text_field :user, :value => !@user_email.nil? ? @user_email : '' %>
+    </div>
+    <div class="field">
+    <%= f.label :content, 'Comment' %><br />
+    <%= f.text_area :content %>
+    </div>
+    <div class="actions">
+    <%= f.submit 'Add' %>
+    </div>
+<% end %>
+</tr></td>
+
 <%= link_to 'Back', :root  %>

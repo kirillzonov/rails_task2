@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   belongs_to :category, :dependent => :destroy
   has_many :votes, :dependent => :destroy
+  has_many :comments, :dependent => :destroy
   validates_presence_of :theme, :content
 
   def voted_from?(ip)

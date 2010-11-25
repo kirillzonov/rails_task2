@@ -18,8 +18,7 @@ class VotesController < ApplicationController
        @post = Post.find(params[:post_id])
     respond_to do |format|
       @text = text
-      format.js# { render :text => "asdasd"}
-#      format.js { render :text => "you`ve already voted"}
+      format.js
     end
   end
 end
