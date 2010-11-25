@@ -23,8 +23,8 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
     @user_id = session[:user_id]
+    @user = User.find(@user_id)
 
     if @user_id
       @user_email = User.find(@user_id).email
