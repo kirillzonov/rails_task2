@@ -1,7 +1,7 @@
-<%= link_to '-', votes_create_path(:post_id => @current_post.id.to_int, :direction => '-'), :remote => true %> 
+<%= link_to '-', votes_create_path(:post_id => @current_post.id.to_int, :vote_down => true), :remote => true %> 
 
       <div id=<%= "rate_for+#{@current_post.id}"%>>
         <%= @current_post.rate %></div>
 
 
-<%= link_to "+", votes_create_path(:post_id => @current_post.id.to_int, :direction => '+'), :remote => true %>
+<%= link_to "+", votes_create_path(:post_id => @current_post.id.to_int, :vote_up => true), :remote => true %>

@@ -5,9 +5,11 @@ class VotesController < ApplicationController
 
     unless post.voted_from?(ip) #(params[ip])
       Vote.create(:post_id => params[:post_id], :user_ip => ip)
-      if params[:direction] == '+'
+#      if params[:direction] == '+'
+      if params[:vote_up]
         post.change_rate(1)
-      else
+      end
+      if params[:vote_down]
         post.change_rate(-1)
       end
       post.save
