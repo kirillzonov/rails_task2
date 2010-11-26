@@ -4,5 +4,4 @@ class CommentsController < ApplicationController
     @comment = @post.comments.create( params[:comment] )
     redirect_to post_path( @post )
   end
-
 end

@@ -1,1 +1,8 @@
-Test task for flatsoft, LLC
+Here is simple clone of digg.com or other news-like site.
+So, what's it:
+1.User cat register with email/password. Also he can input their full name, but it's not necessarily.
+2. Registered user can change him email, password and fullname.
+3. Registered user can add news.
+4. All users can vote for news up or down.
+5. In main page you can see news with only positive rate. For see all news you must link to all_news.
+6. All users can comment all news.
