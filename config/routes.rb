@@ -1,24 +1,16 @@
 RailsTask2::Application.routes.draw do
 
-  get "comments/create"
-
-  resources :comments, :only => [ :new ]
-
-  resources :users, :only => [ :new, :create, :show, :edit, :update]
-  resources :posts, :only => [ :new, :create, :show]
   root :to => 'home#index'
+  resources :users, :only => [ :new, :create, :show, :edit, :update]
   controller :sessions do
     get 'login' => :new
     post 'login' => :create
     delete 'logout' => :destroy
   end
 
-  controller :votes do
-  get "votes/create"
-  end
-
-  resources :posts do
-    resources :comments
+  resources :posts, :only => [ :new, :create, :show] do
+    resources :votes, :only => :create
+    resources :comments, :only => [ :new, :create ]
   end
 
 #  controller :posts do
