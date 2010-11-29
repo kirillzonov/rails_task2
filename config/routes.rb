@@ -8,7 +8,7 @@ RailsTask2::Application.routes.draw do
     delete 'logout' => :destroy
   end
 
-  resources :posts, :only => [ :new, :create, :show] do
+  resources :posts, :only => [ :new, :create, :show, :index] do
     resources :votes, :only => :create
     resources :comments, :only => [ :new, :create ]
   end
