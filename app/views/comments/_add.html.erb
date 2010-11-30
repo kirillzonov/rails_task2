@@ -1,0 +1,14 @@
+<%= form_for( [@post, @comment = @post.comments.new], :remote => true) do |f| %>
+    <p>Input your name and comment here</p>
+    <div class="field">
+    <%= f.label :user, 'Name' %><br />
+    <%= f.text_field :user, :value => !@user_email.nil? ? @user_email : '' %>
+    </div>
+    <div class="field">
+    <%= f.label :content, 'Comment' %><br />
+    <%= f.text_area :content, :rows => 6 %>
+    </div>
+    <div class="actions">
+      <%= f.submit 'Add'%>
+    </div>
+<% end %>

@@ -1,0 +1,5 @@
+page.insert_html :before, 'closing_line', 
+    "<li>
+    <p><b>#{@post.comments.last.user.empty? ? 'Anonimous' : @post.comments.last.user}</b></p>
+    <p>#{@post.comments.last.content}</p>
+    </li>"

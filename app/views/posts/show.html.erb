@@ -26,31 +26,9 @@
 </div>
 <tr><td>
 <% if !@post.comments.empty? %>
-  <h2>Comments:</h2>
-  <ul>
-  <% @post.comments.each do |comment| %>
-    <li>
-    <p><b><%= comment.user.empty? ? 'Anonimous' : comment.user %></b></p>
-    <p><%= comment.content %></p>
-    </li>
-  <% end %>
-  </ul>
+  <%= render 'comments/list' %>
 <% end %>
-<hr>
-<%= form_for( [@post, @comment = @post.comments.new]) do |f| %>
-    <p>Input your name and comment here</p>
-    <div class="field">
-    <%= f.label :user, 'Name' %><br />
-    <%= f.text_field :user, :value => !@user_email.nil? ? @user_email : '' %>
-    </div>
-    <div class="field">
-    <%= f.label :content, 'Comment' %><br />
-    <%= f.text_area :content, :rows => 6 %>
-    </div>
-    <div class="actions">
-      <%= f.submit 'Add' %>
-    </div>
-<% end %>
+<%= render 'comments/add' %>
 </tr></td>
 
 <%= link_to 'Back', :root  %>

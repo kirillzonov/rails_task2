@@ -1,0 +1,10 @@
+  <h2>Comments:</h2>
+  <ul>
+  <% @post.comments.each do |comment| %>
+    <li>
+    <p><b><%= comment.user.empty? ? 'Anonimous' : comment.user %></b></p>
+    <p><%= comment.content %></p>
+    </li>
+  <% end %>
+  <hr id='closing_line'>
+  </ul>
