@@ -1,4 +1,5 @@
 page.insert_html :before, 'closing_line', 
+    @post.comments.last.content.empty? ? 'Error: Content of comment is empty' :
     "<li>
     <p><b>#{@post.comments.last.user.empty? ? 'Anonimous' : @post.comments.last.user}</b></p>
     <p>#{@post.comments.last.content}</p>
