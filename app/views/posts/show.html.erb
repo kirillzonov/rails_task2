@@ -27,6 +27,8 @@
 <tr><td>
 <% if !@post.comments.empty? %>
   <%= render 'comments/list' %>
+<% else %>
+  <hr id='closing_line'>
 <% end %>
 <%= render 'comments/add' %>
 </tr></td>
