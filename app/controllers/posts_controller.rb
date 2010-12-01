@@ -1,12 +1,11 @@
 class PostsController < ApplicationController
+  before_filter :current_user
+  before_filter :logged_in?, :only => :new  
+ 
   # GET /posts
   # GET /posts.xml
   def index
     @posts = Post.paginate(:page => params[:page], :per_page => 5)
-    @user_id = session[:user_id]
-    if @user_id
-      @user_email = User.find(@user_id).email
-    end
     respond_to do |format|
       format.html
     end
@@ -14,10 +13,6 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.xml
   def show
-    @user_id = session[:user_id]
-    if @user_id
-      @user_email = User.find(@user_id).email
-    end
     @post = Post.find(params[:id])
 
     respond_to do |format|

@@ -1,5 +1,5 @@
 <div id='post_list'>
-<% if @user_id %> 
+<% if logged_in? %> 
   <%= link_to 'New Post', new_post_path %>
 <% end %>
 <%= will_paginate @posts %>

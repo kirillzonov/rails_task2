@@ -2,13 +2,13 @@
 
 <p>
   <b>Email:</b>
-  <%= @user.email %>
+  <%= @current_user.email %>
 </p>
 
 <p>
   <b>Fullname:</b>
-  <%= @user.fullname %>
+  <%= @current_user.fullname %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Edit', edit_user_path(@current_user) %> |
 <%= link_to 'Index', :root %>

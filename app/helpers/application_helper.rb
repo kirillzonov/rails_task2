@@ -1,9 +1,5 @@
 module ApplicationHelper
   def logged
-    if @user_id 
-      render 'layouts/logged'
-      else
-      render 'layouts/anonim'
-    end
+    render logged_in? ? 'layouts/logged' : 'layouts/anonim'
   end
 end
