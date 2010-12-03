@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20101126170156) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "rate",        :default => 0
-    t.integer  "user_id"
+    t.integer  "user"
   end
 
   create_table "users", :force => true do |t|
