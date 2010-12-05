@@ -4,7 +4,6 @@ Feature: Create an User
 
 Scenario:
   Given I am on register page
-  Then show page
   When I fill in "user_email" with "graff@fs.com"
   And I fill in "user_fullname" with "Kirill Zonov"
   And I fill in "user_password" with "password"
