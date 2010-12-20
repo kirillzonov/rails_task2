@@ -10,8 +10,8 @@
 <% @posts.each do |post| %>
   <tr class='list_cat'>
     <td>
-      <% @current_post = post %>
-      <%= render "posts/rate" %></td>
+      <%# @current_post = post %>
+      <%= render "posts/rate", :post => post %></td>
     <td>   
       <div id=<%= "message_for+#{post.id}"%>></div>
       Category: <%= post.category.name %> || 

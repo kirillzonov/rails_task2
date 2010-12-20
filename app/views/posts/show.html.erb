@@ -26,7 +26,7 @@
 </div>
 <tr><td>
 <% if !@post.comments.empty? %>
-  <%= render 'comments/list' %>
+  <%= render 'comments/list', :post => @post %>
 <% else %>
   <hr id='closing_line'>
 <% end %>

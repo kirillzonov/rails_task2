@@ -1,6 +1,6 @@
-<%= link_to '-', post_votes_url(@current_post, :vote_down => true), :method => :post, :remote => true %>
+<%= link_to '-', post_votes_url(post, :vote_down => true), :method => :post, :remote => true %>
 
-      <div id=<%= "rate_for+#{@current_post.id}"%>>
-        <%= @current_post.rate %></div>
+      <div id=<%= "rate_for+#{post.id}"%>>
+        <%= post.rate %></div>
 
-<%= link_to '+', post_votes_url(@current_post, :vote_up => true), :method => :post, :remote => true %>
+<%= link_to '+', post_votes_url(post, :vote_up => true), :method => :post, :remote => true %>
