@@ -64,7 +64,11 @@ GEM
     gherkin (2.2.9)
       json (~> 1.4.6)
       term-ansicolor (~> 1.0.5)
+    has_scope (0.5.0)
     i18n (0.4.2)
+    inherited_resources (1.1.2)
+      has_scope (~> 0.5.0)
+      responders (~> 0.6.0)
     json (1.4.6)
     json_pure (1.4.6)
     launchy (0.3.7)
@@ -104,6 +108,7 @@ GEM
       rake (>= 0.8.4)
       thor (~> 0.14.0)
     rake (0.8.7)
+    responders (0.6.2)
     rspec (2.2.0)
       rspec-core (~> 2.2)
       rspec-expectations (~> 2.2)
@@ -151,6 +156,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   factory_girl
+  inherited_resources (= 1.1.2)
   launchy
   rails (= 3.0.1)
   rails_best_practices
