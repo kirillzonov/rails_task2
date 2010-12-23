@@ -2,7 +2,7 @@
     <p>Input your name and comment here</p>
     <div class="field">
     <%= f.label :user, 'Name' %><br />
-    <%= f.text_field :user, :value => !@user_email.nil? ? @user_email : '' %>
+    <%= f.text_field :user, :value => logged_in? ? current_user.email : '' %>
     </div>
     <div class="field">
     <%= f.label :content, 'Comment' %><br />
